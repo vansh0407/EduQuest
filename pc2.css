@@ -1,0 +1,423 @@
+/* in general */
+body {
+  font-family: 'Nunito', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700; }
+
+.navbar {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+}
+/* navbar section  */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: transparent !important;
+  transition: background 0.4s ease-in-out;
+  z-index: 1000;
+  padding: 10px 0;
+}
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0, 0, 0, 0.914) !important;
+  padding: 15px 0;
+  z-index: 1000;
+}
+.navbar .nav-link {
+  color: white !important;
+  font-weight: bold;
+}
+.navbar.scrolled .nav-link {
+  color: white !important;
+}
+.navbar-brand {
+  color: white !important;
+  font-weight: bold;
+}
+
+/* Hero Section*/
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 80px; 
+}
+
+#heroCarousel {
+  animation-duration: 5s;
+}
+
+#heroCarousel .carousel-item {
+  height: 100vh;
+}
+
+#heroCarousel .carousel-item img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#heroCarousel .carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+}
+#heroCarousel .carousel-caption h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+}
+
+#heroCarousel .carousel-caption p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#heroCarousel .carousel-caption .btn {
+  margin-top: 15px;
+  padding: 14px 30px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 8px;
+  background: #007bff; 
+  color: #fff;
+  transition: 0.3s ease-in-out;
+}
+
+#heroCarousel .carousel-caption .btn:hover {
+  background: #007bff;
+  color: #ffffff;
+}
+
+/* Typewriter Effect */
+.typewriter {
+  display: inline-block;
+  border-right: 3px solid #ffffff; /* White Cursor */
+  padding-right: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blinkCursor 1s infinite;
+}
+
+/* Cursor Blinking Animation */
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  #heroCarousel .carousel-caption {
+    width: 90%;
+    max-width: 600px;
+  }
+  #heroCarousel .carousel-caption h1 {
+    font-size: 2.8rem;
+  }
+  #heroCarousel .carousel-caption p {
+    font-size: 1.3rem;
+  }
+  #heroCarousel .carousel-caption .btn {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+  }
+}
+/* footer section  */
+.container {
+  max-width: 90%; /* Increase from default Bootstrap width */
+}
+
+.feature-icon {
+  color: #007bff;
+}
+
+footer {
+  background-color: #343a40;
+}
+
+footer .social-icons a {
+  text-decoration: none;
+}
+
+footer .social-icons a:hover {
+  opacity: 0.8;
+}
+
+/* courses section  */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  text-align: center;
+  perspective: 1000px; /* Enables 3D flip effect */
+}
+
+.course-item {
+  width: 100%;
+  height: 450px; /* Adjust height */
+  perspective: 1000px; /* Required for 3D effect */
+}
+
+.course-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* Keeps 3D effect */
+  transition: transform 0.6s ease-in-out;
+}
+
+
+.course-item:hover .course-inner {
+  transform: rotateX(180deg);
+}
+
+.course-front,
+.course-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.course-back {
+  transform: rotateX(180deg); 
+  background: #007bff;
+  color: white;
+}
+.course-front {
+  background: white;
+}
+
+.course-front img {
+  max-width: 80%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.course-back a {
+  margin-top: 10px;
+}
+
+/* feature section  */
+.feature-card {
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s, background-color 0.3s;
+  background: white;
+  color: black;
+}
+
+.feature-card .card-body {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: #007bff; 
+  color: white; 
+}
+
+.feature-card:hover .feature-icon {
+  color: lightblue; 
+}
+
+.features-section {
+  background: white !important; 
+  background-image: none !important; 
+}
+
+/* pricing section  */
+.pricing-section {
+  background: white !important; 
+  background-image: none !important; 
+}
+
+.pricing-section .card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s, background-color 0.3s;
+}
+
+.pricing-section .card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: white;
+  color: black;
+}
+
+.pricing-section .card:hover .card-title,
+.pricing-section .card:hover .card-text,
+.pricing-section .card:hover ul li {
+  color: black;
+}
+
+/* contact section  */
+.contact-section {
+  background: white !important; 
+  background-image: none !important; 
+}
+
+.contact-section input,
+.contact-section textarea {
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s;
+}
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+.contact-section button {
+  transition: background-color 0.3s ease-in-out, transform 0.2s;
+}
+.contact-section button:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+/* Instructor Section  */
+.ins-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: black;
+}
+.test .card {
+  width: 100%;
+  max-width: 280px; /* Adjusted for better spacing */
+  height: 450px; /* Increased slightly to space out content */
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 15px;
+}
+.test .card:hover {
+  transform: scale(1.05);
+  background-color:  #007bff;
+  color: white;
+}
+.test .card img {
+  width: 100%; /* Take full width of the card */
+  height: auto;
+  border-radius: 10px; /* Slightly rounded edges */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+.test .card:hover img {
+  transform: scale(1.05);
+}
+/* Social Icons Placement */
+.ins-position {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.position-absolute {
+  display: flex;
+  gap: 10px;
+}
+/* Instructor Name & Info - Shifted Slightly Below Social Icons */
+.ins-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 25px; /* Added space below social icons */
+}
+
+.ins-info {
+  font-size: 15px;
+  color: #555;
+}
+
+/* Change text color on hover */
+.test .card:hover .ins-name,
+.test .card:hover .ins-info {
+  color: white;
+}
+
+.instructor-section {
+  background: white !important; /* Removes the background image */
+  background-image: none !important; /* Explicitly removes any inherited background */
+}
+.test-row {
+  margin-left: 20px; /* Moves the whole row slightly to the right */
+}
+
+/* about section  */
+.about-section {
+  background: white;
+  padding: 80px 0;
+  background-image: none !important; /* Explicitly removes any inherited background */
+
+}
+.about-img {
+  width: 100%; /* Make sure the image takes full width */
+  max-width: 500px; /* Set a max width to avoid oversized images */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px;
+  display: block; /* Ensure it's properly displayed */
+  margin: auto; /* Center it within the column */
+}
+
+
+.counter {
+  font-size: 2.5rem;
+  color: #007bff;
+  font-weight: bold;
+}
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+/* Testimonial Card Styling */
+.courses-section .card, .testimonials-section .card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.courses-section .card:hover, .testimonials-section .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
